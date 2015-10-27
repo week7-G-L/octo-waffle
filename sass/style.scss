@@ -24,19 +24,24 @@ img {
 }
 
 body {
-	color: white;
-	background: #3498db;
+	color: #111;
+	background: #eee;
+	font-family: $workSans;
 }
 
 
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+	padding: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .content {
-	float: left;
-	width: 65%;
+	display: flex;
+	flex-wrap: wrap;
 	margin-right: 5%;
 }
 
@@ -44,7 +49,11 @@ body {
 	width: 100%;
 }
 
-
+article{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
 
 
 
