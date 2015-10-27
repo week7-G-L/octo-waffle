@@ -7,10 +7,11 @@ var gulp   = require('gulp'),
 
 gulp.task('bs', function(){
 	browserSync.init({
-		proxy: 'http://localhost:8888/week7project/'
+
+		proxy: 'localhost:8888'
 	});
 });
-	
+
 gulp.task('default', ['bs', 'styles', 'watch']);
 
 gulp.task('styles', function() {
