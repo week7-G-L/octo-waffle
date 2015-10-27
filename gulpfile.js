@@ -7,6 +7,7 @@ var gulp   = require('gulp'),
 
 gulp.task('bs', function(){
 	browserSync.init({
+
 		proxy: 'localhost:8888'
 	});
 });
@@ -28,4 +29,5 @@ gulp.task('styles', function() {
 gulp.task('watch', function() {
 	gulp.watch('sass/**/*.scss', ['styles']);
 	gulp.watch('**/*.php', reload);
+
 });
