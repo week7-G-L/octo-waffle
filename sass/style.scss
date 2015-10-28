@@ -13,6 +13,17 @@
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+
+/*
+====================================
+Default Colours
+====================================
+*/
+
+$seafoam: #A5DBD8;
+$orange: #F96903;
+$lightblue: #CDE5ED;
+
 /*
 ====================================
 Default Styling
@@ -24,8 +35,8 @@ img {
 }
 
 body {
-	color: #111;
-	background: #eee;
+	color: white;
+	background: $seafoam;
 	font-family: $workSans;
 }
 
