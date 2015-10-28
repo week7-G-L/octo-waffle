@@ -17,4 +17,24 @@ include('headerSplash.php');  ?>
   </div> <!-- /.container -->
 </div> <!-- /.main -->
 
+<section class="body">
+	
+</section>
+
+<section class="feature">
+	
+</section>
+
+<section class="book">
+	
+</section>
+
+<section class="latest">
+	
+</section>
+
+<section class="testimonials">
+	
+</section>
+
 <?php get_footer(); ?>
