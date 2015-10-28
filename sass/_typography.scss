@@ -1,8 +1,12 @@
+$workSans: 'Work Sans', sans-serif;
+$orange: #F96903;
+
+
 a {
-	color: #BA209B;
+	color: white;
 	text-decoration: none;
 	&:hover {
-		color: #D424B1;
+		color: $orange;
 	}
 }
 
