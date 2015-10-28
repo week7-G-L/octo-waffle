@@ -14,6 +14,11 @@
 @import 'comments';
 @import 'footer';
 
+@mixin fontSize($fontSize) {
+	font-size: $fontSize * 1px; 
+	font-size: ($fontSize / 10) * 1rem;
+}
+
 /*
 ====================================
 Default Colours
@@ -21,14 +26,182 @@ Default Colours
 */
 
 $seafoam: #A5DBD8;
-$orange: #F96903;
+$orange: #FD6900;
 $lightblue: #CDE5ED;
+$darkgrey: #3C3D41;
+$lightgrey: #656B6F;
+$red: #D0021B;
+
+
+/*
+====================================
+Typography
+====================================
+*/
+
+
+h1 {
+	/* Main logo title */
+	@include fontSize(150);
+	font-family: 'Great Vibes', cursive;
+	color: #FFFFFF;
+}
+
+h2 {
+	/* Caps titles */
+	@include fontSize(14);
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	color: $darkgrey;
+	letter-spacing: 2.54px;
+	line-height: 16px;
+}
+
+h3 {
+
+	/* SubTtitle in header */
+	@include fontSize(20);
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	color: #FFFFFF;
+	line-height: 85px;
+
+}
+
+h4 {
+
+	/* CTA Subtext above featured plans */
+	font-family: 'Merriweather', serif;
+	@include fontSize(24);
+	color: #FFFFFF;
+	line-height: 31px;
+
+}
+
+h5 {
+
+	/* Start working on you: */
+	font-family: 'Merriweather', serif;
+	@include fontSize(21);
+	color: $lightgrey;
+	line-height: 35px;
+
+}
+
+p {
+	/* Body copy */
+	@include fontSize(14);
+	font-family: 'Merriweather', serif;
+	color: $lightgrey;
+	line-height: 20px;
+}
+
+.blogTitle {
+	/* Blog Titles */
+	@include fontSize(14);
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	color: $darkgrey;
+	line-height: 21px;
+
+}
+
+.postDate {
+	/* Post Date */
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	@include fontSize(12);
+	color: $darkgrey;
+	line-height: 21px;
+
+}
+
+.blog a {
+
+
+}
+
+footer p {
+
+	color: white;
+
+}
+
+footer.titles {
+	
+
+}
+
+
+/*
+====================================
+Buttons
+====================================
+*/
+
+.mainBtn {
+
+
+	:hover {
+
+	}
+
+}
+
+.secondBtn {
+
+	
+	:hover {
+
+	}
+
+}
+
+/*
+====================================
+Tags
+====================================
+*/
+
+.tag {
+
+}
+
+.sale {
+	background: $red;
+}
+
+.new {
+	background: $orange;
+}
+
+
+/*
+====================================
+Social Media
+====================================
+*/
+
+
+/*
+====================================
+Social Media
+====================================
+*/
+
+
 
 /*
 ====================================
 Default Styling
 ====================================
 */
+
+html {
+	font-size: 62.5%;
+
+}
 
 img {
 	max-width: 100%;
@@ -37,7 +210,7 @@ img {
 body {
 	color: white;
 	background: $seafoam;
-	font-family: $workSans;
+	font-family: 'Merriweather', serif;
 }
 
 
