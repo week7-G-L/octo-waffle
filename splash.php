@@ -6,8 +6,8 @@
 
 include('headerSplash.php');  ?>
 
-<header>
-	<div class="main container">
+<header class="container">
+<!-- 	<div class="main container">
 		<div class="hamburger"><i class="fa fa-bars"></i></div>
 		<div class="social">
 			<ul>
@@ -16,8 +16,10 @@ include('headerSplash.php');  ?>
 				<li><i class="fa fa-instagram"></i></li>
 			</ul>
 		</div>
-	</div>
-	<div class="hero wrapper">
+	</div> -->
+	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), full ); ?>
+
+	<div class="hero wrapper" style="background-image: url('<?php echo $image[0]; ?>')">
 		<h3><?php echo get_bloginfo( 'description' )?></h3>
 		
 		<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><?php echo get_bloginfo( )?></a></h1>
@@ -26,27 +28,24 @@ include('headerSplash.php');  ?>
 	</div>
 </header>
 
-<!-- <img src="<?php echo get_template_directory_uri(); ?>/images/bonjovi.jpg" alt="">
-<img src="<?= bloginfo('template_url'); ?>/images/bonjovi.jpg" alt=""> -->
 
-
-  </div> <!-- /.container -->
+  </div> 
 </div> <!-- /.main -->
 
 <section class="body">
 	<ul>
 		<li>
-			<img src="">>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/Icon1.svg" alt="">
 			<h2>Natural Remedies</h2>
 			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
 		</li>
 		<li>
-			<img src="">>
+			<img src="<?php echo get_template_directory_uri(); ?>/images/Icon2.svg" alt="">
 			<h2>Workout Routines</h2>
 			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
 		</li>
 		<li>
-			<img src="">>
+			<img src="<?php echo get_template_directory_uri(); ?>/images/Icon3.svg" alt="">
 			<h2>Meal Plans</h2>
 			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
 	</ul>

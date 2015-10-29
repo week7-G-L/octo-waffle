@@ -188,7 +188,7 @@ Header
 ====================================
 */
 
-.mainHeader {
+.hero {
 
 	/* Location of the image */
 	background-image: url(../images/mainIllustration.svg);
@@ -204,7 +204,7 @@ Header
 	background-attachment: fixed;
 
 	/* This is what makes the background image rescale based on its container's size */
-	background-size: cover;
+	background-size: contain;
 
 	// /* Pick a solid background color that will be displayed while the background image is loading */
 	// background-color:#464646;
@@ -242,6 +242,8 @@ body {
 	color: white;
 	background: $seafoam;
 	font-family: 'Merriweather', serif;
+	padding: 0;
+	margin: 0;
 }
 
 
@@ -276,7 +278,7 @@ article{
 
 section.body{
 	background: white;
-	padding: 20rem;
+	// padding: 20rem;
 }
 
 section.feature{
