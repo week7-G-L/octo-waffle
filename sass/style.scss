@@ -80,6 +80,7 @@ h4 {
 	@include fontSize(24);
 	color: #FFFFFF;
 	line-height: 31px;
+	text-align: center;
 
 }
 
@@ -279,3 +280,7 @@ section.testimonials{
 	padding: 15rem;
 }
 
+section.closing{
+	background: white;
+	padding: 15rem;
+}
