@@ -75,7 +75,7 @@ include('headerSplash.php');  ?>
 	  ?>
 
 			<?php while ($featureQuery->have_posts()) : $featureQuery->the_post(); ?>
-	
+			<img src="<?php the_field('image') ?>" alt="">
 			<h2><?php the_title() ?></h2>
 			<?php endwhile; ?>
 

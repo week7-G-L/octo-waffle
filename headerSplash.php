@@ -16,14 +16,3 @@
 
 
 <body <?php body_class(); ?>>
-
-<header>
-  <div class="nav">
-    <?php wp_nav_menu( array(
-      'container' => false,
-      'theme_location' => 'primary'
-    )); ?>
-  </div>
-  <!-- /.container -->
-</header><!--/.header-->
-
