@@ -30,7 +30,7 @@ include('headerSplash.php');  ?>
 <img src="<?= bloginfo('template_url'); ?>/images/bonjovi.jpg" alt=""> -->
 
 
-  </div> <!-- /.container -->
+  </div> /.container
 </div> <!-- /.main -->
 
 <section class="body">
@@ -54,11 +54,39 @@ include('headerSplash.php');  ?>
 
 <section class="feature">
 	<h4>Don't wait! Get started on your path to wellness today.</h4>
-	<h2>Featured Plans</h2>
+	
+	<!-- shows 3 featured plans -->
+
+	<?php 
+
+		$featureQuery = new WP_Query(
+				array(
+						'posts_per_page' => 3,
+						'post_type' => 'feature',
+						'post_not_in' => array( $post->ID )
+					)
+			);
+
+	 ?>
+
+	 <?php 
+
+	 	if ($featureQuery->have_posts()) : 
+
+	  ?>
+
+			<?php while ($featureQuery->have_posts()) : $featureQuery->the_post(); ?>
+	
+			<h2><?php the_title() ?></h2>
+			<?php endwhile; ?>
+
+		<?php endif; ?>
+	
 </section>
 
 <section class="book">
 	
+
 </section>
 
 <section class="latest">
