@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Home-Page" sketch:type="MSArtboardGroup" transform="translate(-345.000000, -1006.000000)">
+            <g id="Featured-Icons" sketch:type="MSLayerGroup" transform="translate(-23.000000, 948.000000)">
+                <g id="Icon-1" transform="translate(368.000000, 58.000000)" sketch:type="MSShapeGroup">
+                    <path d="M51.0791,40.3926 C50.3861,40.5526 48.7661,40.3126 45.1621,36.3826 C41.5531,32.4536 39.8331,34.3836 39.8331,34.3836 C32.1611,40.2366 29.0001,37.9416 29.0001,37.9416 C29.0001,37.9416 36.7181,47.0346 50.9271,42.4486" id="Stroke-1" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M51.1543,40.3926 C51.8493,40.5526 53.4673,40.3126 57.0723,36.3826 C60.6803,32.4536 62.4003,34.3836 62.4003,34.3836 C70.0723,40.2366 73.2343,37.9416 73.2343,37.9416 C73.2343,37.9416 65.5163,47.0346 51.3063,42.4486" id="Stroke-3" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M54.9649,30.8116 C54.9649,32.9136 53.2599,34.6206 51.1539,34.6206 C49.0519,34.6206 47.3439,32.9136 47.3439,30.8116 C47.3439,28.7066 49.0519,26.9996 51.1539,26.9996 C53.2599,26.9996 54.9649,28.7066 54.9649,30.8116 L54.9649,30.8116 Z" id="Stroke-5" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M51.1543,68.7627 L51.1543,72.9997" id="Stroke-7" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M51.1543,34.6202 L51.1543,50.3342" id="Stroke-9" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M58.9532,47.5137 C61.3572,47.5137 64.6472,47.5807 65.7092,49.1547 C66.5702,50.4467 65.9232,51.9607 64.5932,53.0167 C63.1112,54.1907 59.9532,54.8117 57.7292,55.2817 C54.9282,55.8757 52.1042,56.1957 49.4922,56.9347 C44.5542,58.3267 44.3202,62.1777 48.4732,64.2057 C50.9012,65.3917 53.6422,66.0337 56.1942,66.9497 C58.4982,67.7787 58.8462,68.7887 58.7282,70.4217 C58.6772,71.1367 58.1762,71.5607 57.8142,72.2197" id="Stroke-11" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M48.8077,66.1846 C48.0277,66.4326 47.2547,66.6776 46.4977,66.9506 C44.1907,67.7786 43.8447,68.7886 43.9657,70.4216 C44.0157,71.1366 44.5177,71.5606 44.8727,72.2196" id="Stroke-13" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M53.9678,57.1827 C58.1548,58.7447 58.1468,62.2897 54.2188,64.2057" id="Stroke-15" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M43.7383,47.5137 C41.3283,47.5137 38.0463,47.5807 36.9823,49.1547 C36.1193,50.4467 36.7693,51.9607 38.1043,53.0167 C39.5803,54.1907 42.7463,54.8117 44.9623,55.2817 C45.8043,55.4617 46.6563,55.6157 47.4963,55.7637" id="Stroke-17" stroke="#F5861E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M50,0 C22.386,0 0,22.385 0,49.999 L0,50 C0,77.614 22.386,100 50,100 C77.614,100 100,77.614 100,50 L100,49.999 C100,22.385 77.614,0 50,0 Z M97,50 C97,75.916 75.916,97 50,97 C24.084,97 3,75.915 3,49.999 C3,24.084 24.084,3 50,3 C75.916,3 97,24.084 97,50 Z" id="Icon-100x100" fill="#F5861E"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
