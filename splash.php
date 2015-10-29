@@ -30,7 +30,7 @@ include('headerSplash.php');  ?>
 <img src="<?= bloginfo('template_url'); ?>/images/bonjovi.jpg" alt=""> -->
 
 
-  </div> /.container
+  </div> <!-- /.container -->
 </div> <!-- /.main -->
 
 <section class="body">
