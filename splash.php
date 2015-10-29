@@ -6,14 +6,28 @@
 
 include('headerSplash.php');  ?>
 
-<div class="main">
-  <div class="container">
-
+<header>
+	<div class="main container">
+		<div class="hamburger"><i class="fa fa-bars"></i></div>
+		<div class="social">
+			<ul>
+				<li><i class="fa fa-facebook"></i></li>
+				<li><i class="fa fa-twitter"></i></li>
+				<li><i class="fa fa-instagram"></i></li>
+			</ul>
+		</div>
+	</div>
+	<div class="hero wrapper">
 		<h3><?php echo get_bloginfo( 'description' )?></h3>
 		
 		<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><?php echo get_bloginfo( )?></a></h1>
 
-		<button class="mainBtn">Work With Us</button>
+		<button class="mainBtn">Work With Us </button>
+	</div>
+</header>
+
+<!-- <img src="<?php echo get_template_directory_uri(); ?>/images/bonjovi.jpg" alt="">
+<img src="<?= bloginfo('template_url'); ?>/images/bonjovi.jpg" alt=""> -->
 
 
   </div> <!-- /.container -->
