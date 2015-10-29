@@ -17,7 +17,7 @@ include('headerSplash.php');  ?>
 			</ul>
 		</div>
 	</div> -->
-	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), full ); ?>
+	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
 
 	<div class="hero wrapper" style="background-image: url('<?php echo $image[0]; ?>')">
 		<h3><?php echo get_bloginfo( 'description' )?></h3>
@@ -77,6 +77,7 @@ include('headerSplash.php');  ?>
 			<?php while ($featureQuery->have_posts()) : $featureQuery->the_post(); ?>
 			<img src="<?php the_field('image') ?>" alt="">
 			<h2><?php the_title() ?></h2>
+			<p><?php the_field('description') ?></p>
 			<?php endwhile; ?>
 
 		<?php endif; ?>
@@ -91,10 +92,46 @@ include('headerSplash.php');  ?>
 <section class="latest">
 	<h2>Latest from the blog</h2>
 	
+	<ul class="blogLatest">
+<?php
+	$args = array( 'numberposts' => '3' );
+	$recent_posts = wp_get_recent_posts( $args );
+	foreach( $recent_posts as $recent ){
+		echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+	}
+?>
+</ul>
+
 </section>
 
 <section class="testimonials">
 	
+	<?php 
+
+		$testimonialQuery = new WP_Query(
+				array(
+						'posts_per_page' => 1,
+						'post_type' => 'testimonial',
+						'post_not_in' => array( $post->ID )
+					)
+			);
+
+	 ?>
+
+	 <?php 
+
+	 	if ($testimonialQuery->have_posts()) : 
+
+	  ?>
+
+			<?php while ($testimonialQuery->have_posts()) : $testimonialQuery->the_post(); ?>
+			<img src="<?php the_field('testimonialImage') ?>" alt="">
+			<h2><?php the_title() ?></h2>
+			<p><?php the_field('testimonialQuote') ?></p>
+			<?php endwhile; ?>
+
+		<?php endif; ?>
+
 </section>
 
 <section class="closing">
