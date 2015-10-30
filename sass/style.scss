@@ -222,6 +222,7 @@ Header
 
 .serviceSection {
 	display: flex;
+	width: 33%;
 }
 
 .services {
@@ -410,6 +411,14 @@ section.body{
 	&:nth-child(2){
 		margin: 0 2rem;
 	}
+}
+
+article {
+	display: flex;
+	background: white;
+	border-radius: 1em;
+	margin: 1em 0;
+
 }
 
 section.feature{
