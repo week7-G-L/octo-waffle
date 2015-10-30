@@ -37,10 +37,10 @@ include('headerSplash.php');  ?>
 	<div class="container row serviceSection">
 			<?php 
 		
-				$descriptorQuery = new WP_Query(
+				$serviceQuery = new WP_Query(
 						array(
 								'posts_per_page' => 3,
-								'post_type' => 'descriptor',
+								'post_type' => 'service',
 								'post_not_in' => array( $post->ID )
 							)
 					);
@@ -49,16 +49,16 @@ include('headerSplash.php');  ?>
 		
 			 <?php 
 		
-			 	if ($descriptorQuery->have_posts()) : 
+			 	if ($serviceQuery->have_posts()) : 
 		
 			  ?>
 		
-					<?php while ($descriptorQuery->have_posts()) : $descriptorQuery->the_post(); ?>
+					<?php while ($serviceQuery->have_posts()) : $serviceQuery->the_post(); ?>
 				<div class="descItem">
 						<div class="descImg">
 							<img src="<?php the_field('desc-image') ?>" alt="">
 						</div>
-					<h2><?php the_field('desc-title') ?></h2>
+					<h2><?php the_title() ?></h2>
 					<p><?php the_field('desc-summary') ?></p>
 				</div>
 					<?php endwhile; ?>
@@ -121,22 +121,35 @@ include('headerSplash.php');  ?>
 <section class="latest">
 	<h2>Latest from the blog</h2>
 	
-	<ul class="blogLatest">
-<?php
-	$args = array( 'numberposts' => '3' );
-	$recent_posts = wp_get_recent_posts( $args );
-	foreach( $recent_posts as $recent ){ 
-		echo '<li>
-		<img src="' . get_the_post_thumbnail( $recent['ID'], 'thumbnail') . '">
-		<a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
-	}
-?>
+	<ul class="blogLatest row">
+
+	<?php $newAwesomeQuery = new WP_Query(array(
+		'posts_per_page' => 3
+	)); ?>
+
+	<?php if ( $newAwesomeQuery->have_posts() ) : ?>
+		<?php while ( $newAwesomeQuery->have_posts() ) : $newAwesomeQuery->the_post(); ?>
+			
+			<li>
+				<a href="<?php the_permalink(); ?>">
+					<?php echo get_the_post_thumbnail(); ?>
+					<p class="blogTitle"><?php the_title(); ?></p>
+					<p><?php the_excerpt(); ?></p>
+				</a>
+			</li>
+
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+
+	<?php else:  ?>
+		[stuff that happens if there aren't any posts]
+	<?php endif; ?>
+
 </ul>
 
 </section>
 
-<section class="testimonials js-flickity"   data-flickity-options='{ "cellAlign": "left", "contain": true }'>
->
+<section class="testimonials js-flickity"   data-flickity-options='{ "cellAlign": "left", "contain": true, "wrapAround": true}'>
 	
 	<?php 
 
@@ -158,9 +171,11 @@ include('headerSplash.php');  ?>
 
 			
 			<?php while ($testimonialQuery->have_posts()) : $testimonialQuery->the_post(); ?>
-			<img src="<?php the_field('testimonialImage') ?>" alt="">
-			<h2><?php the_title() ?></h2>
-			<p><?php the_field('testimonialQuote') ?></p>
+			<div class="gallery-cell">
+				<img src="<?php the_field('testimonialImage') ?>" alt="">
+				<h2><?php the_title() ?></h2>
+				<p><?php the_field('testimonialQuote') ?></p>
+			</div>
 			<?php endwhile; ?>
 
 		<?php endif; ?>
