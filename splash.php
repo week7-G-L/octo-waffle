@@ -25,6 +25,7 @@ include('headerSplash.php');  ?>
 		<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><?php echo get_bloginfo( )?></a></h1>
 
 		<button class="mainBtn">Work With Us </button>
+
 	</div>
 </header>
 
@@ -110,7 +111,7 @@ include('headerSplash.php');  ?>
 	$recent_posts = wp_get_recent_posts( $args );
 	foreach( $recent_posts as $recent ){ 
 		echo '<li>
-		<img src="' . get_the_post_thumbnail( $recent['ID']) . '">
+		<img src="' . get_the_post_thumbnail( $recent['ID'], 'thumbnail') . '">
 		<a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
 	}
 ?>
@@ -118,13 +119,14 @@ include('headerSplash.php');  ?>
 
 </section>
 
-<section class="testimonials">
+<section class="testimonials js-flickity"   data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+>
 	
 	<?php 
 
 		$testimonialQuery = new WP_Query(
 				array(
-						'posts_per_page' => 1,
+						'posts_per_page' => -1,
 						'post_type' => 'testimonial',
 						'post_not_in' => array( $post->ID )
 					)
@@ -138,6 +140,7 @@ include('headerSplash.php');  ?>
 
 	  ?>
 
+			
 			<?php while ($testimonialQuery->have_posts()) : $testimonialQuery->the_post(); ?>
 			<img src="<?php the_field('testimonialImage') ?>" alt="">
 			<h2><?php the_title() ?></h2>

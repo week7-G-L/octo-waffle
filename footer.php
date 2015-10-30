@@ -40,6 +40,8 @@
  s.parentNode.insertBefore(g,s)}(document,"script"));
 </script>
 
+<script src="/path/to/flickity.pkgd.min.js"></script>
+
 <?php wp_footer(); ?>
 </body>
 </html>	
