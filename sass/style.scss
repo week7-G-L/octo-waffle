@@ -425,11 +425,29 @@ section.book{
 section.latest{
 	padding: 15rem;
 	background: white;
+	h2{
+		padding: 3rem 0;
+	}
 }
 
 .blogLatest{
 	color: black;
 	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	li{
+		width: 33.33%;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		img{
+			display: block;
+		}
+	}
 	a{
 		color: black;
 	}

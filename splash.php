@@ -121,7 +121,7 @@ include('headerSplash.php');  ?>
 <section class="latest">
 	<h2>Latest from the blog</h2>
 	
-	<ul class="blogLatest">
+	<ul class="blogLatest row">
 
 	<?php $newAwesomeQuery = new WP_Query(array(
 		'posts_per_page' => 3
@@ -130,11 +130,13 @@ include('headerSplash.php');  ?>
 	<?php if ( $newAwesomeQuery->have_posts() ) : ?>
 		<?php while ( $newAwesomeQuery->have_posts() ) : $newAwesomeQuery->the_post(); ?>
 			
-			<a href="<?php the_permalink(); ?>">
-				<?php echo get_the_post_thumbnail(); ?>
-				<?php the_title(); ?>
-				<?php the_excerpt(); ?>
-			</a>
+			<li>
+				<a href="<?php the_permalink(); ?>">
+					<?php echo get_the_post_thumbnail(); ?>
+					<p class="blogTitle"><?php the_title(); ?></p>
+					<p><?php the_excerpt(); ?></p>
+				</a>
+			</li>
 
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
@@ -147,7 +149,7 @@ include('headerSplash.php');  ?>
 
 </section>
 
-<section class="testimonials js-flickity"   data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+<section class="testimonials js-flickity"   data-flickity-options='{ "cellAlign": "left", "contain": true, "wrapAround": true}'>
 	
 	<?php 
 
