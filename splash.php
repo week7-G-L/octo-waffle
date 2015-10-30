@@ -90,7 +90,7 @@ include('headerSplash.php');  ?>
 	 	if ($featureQuery->have_posts()) : 
 
 	  ?>
-			<article>
+			<article class="featureStyles">
 			<?php while ($featureQuery->have_posts()) : $featureQuery->the_post(); ?>
 			<img src="<?php the_field('image') ?>" alt="">
 			<h2><?php the_title() ?></h2>
