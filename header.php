@@ -5,7 +5,8 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php  wp_title('|', true, 'right'); ?></title>
-<link href='https://fonts.googleapis.com/css?family=Great+Vibes|Merriweather:400,700|Raleway:400,300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/path/to/flickity.css" media="screen">
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes|Raleway:400,700,600,300,200,500|Merriweather' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 

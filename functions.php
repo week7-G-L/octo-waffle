@@ -70,6 +70,14 @@ function hackeryou_scripts() {
     null, // version number
     true //load in footer
   );
+
+  wp_enqueue_script( 
+  	'flickity',
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . ":/path/to/flickity.pkgd.min.js",
+  	false,
+  	null,
+  	true
+  	);
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');

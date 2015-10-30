@@ -6,9 +6,6 @@
 
 include('headerSplash.php');  ?>
 
-
-
-
 <!-- Header Section -->
 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
 
@@ -33,37 +30,46 @@ include('headerSplash.php');  ?>
 		</div>
 
 
-
   </div> 
 </div> <!-- /.main -->
 
-<section class="body container">
-
-
-	<div class="serviceSection">
-	<ul class="services">
-		<li>
-		<img src="<?php echo get_template_directory_uri(); ?>/images/Icon1.svg" alt="">
-			<h2>Natural Remedies</h2>
-			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
-		</li>
-		<li>
-			<img src="<?php echo get_template_directory_uri(); ?>/images/Icon2.svg" alt="">
-			<h2>Workout Routines</h2>
-			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
-		</li>
-		<li>
-			<img src="<?php echo get_template_directory_uri(); ?>/images/Icon3.svg" alt="">
-			<h2>Meal Plans</h2>
-			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
-	</ul>
+<section class="body">
+	<div class="container row serviceSection">
+			<?php 
 		
-	</div>
+				$descriptorQuery = new WP_Query(
+						array(
+								'posts_per_page' => 3,
+								'post_type' => 'descriptor',
+								'post_not_in' => array( $post->ID )
+							)
+					);
+		
+			 ?>
+		
+			 <?php 
+		
+			 	if ($descriptorQuery->have_posts()) : 
+		
+			  ?>
+		
+					<?php while ($descriptorQuery->have_posts()) : $descriptorQuery->the_post(); ?>
+				<div class="descItem">
+						<div class="descImg">
+							<img src="<?php the_field('desc-image') ?>" alt="">
+						</div>
+					<h2><?php the_field('desc-title') ?></h2>
+					<p><?php the_field('desc-summary') ?></p>
+				</div>
+					<?php endwhile; ?>
+		
+				<?php endif; ?></div>
 
 </section>
 
 <section class="feature">
 	<h4>Don't wait! Get started on your path to wellness today.</h4>
+	<h2>Featured Plans</h2>
 	
 	<!-- shows 3 featured plans -->
 
@@ -98,6 +104,17 @@ include('headerSplash.php');  ?>
 
 <section class="book">
 	
+	<form action="">
+		<h2>Request a Booking</h2>
+		<input type="text" id="bookDate">
+		<select name='bookTime' id='bookTime'>
+			<option value="morning" selected>Morning</option>
+			<option value="afternoon">Afternoon</option>
+			<option value="evening">Evening</option>
+		</select>
+		<button class="goBtn">Go</button>
+
+	</form>
 
 </section>
 
@@ -108,21 +125,24 @@ include('headerSplash.php');  ?>
 <?php
 	$args = array( 'numberposts' => '3' );
 	$recent_posts = wp_get_recent_posts( $args );
-	foreach( $recent_posts as $recent ){
-		echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+	foreach( $recent_posts as $recent ){ 
+		echo '<li>
+		<img src="' . get_the_post_thumbnail( $recent['ID'], 'thumbnail') . '">
+		<a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
 	}
 ?>
 </ul>
 
 </section>
 
-<section class="testimonials">
+<section class="testimonials js-flickity"   data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+>
 	
 	<?php 
 
 		$testimonialQuery = new WP_Query(
 				array(
-						'posts_per_page' => 1,
+						'posts_per_page' => -1,
 						'post_type' => 'testimonial',
 						'post_not_in' => array( $post->ID )
 					)
@@ -136,6 +156,7 @@ include('headerSplash.php');  ?>
 
 	  ?>
 
+			
 			<?php while ($testimonialQuery->have_posts()) : $testimonialQuery->the_post(); ?>
 			<img src="<?php the_field('testimonialImage') ?>" alt="">
 			<h2><?php the_title() ?></h2>
