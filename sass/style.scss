@@ -15,6 +15,8 @@
 @import 'header';
 @import 'footer';
 
+
+
 @mixin fontSize($fontSize) {
 	font-size: $fontSize * 1px; 
 	font-size: ($fontSize / 10) * 1rem;
@@ -40,13 +42,26 @@ Typography
 ====================================
 */
 
+//This is the MAIN page h1 ONLY
+.hero h1 {
+	/* Main logo title */
+	@include fontSize(150);
+	font-family: 'Great Vibes', cursive;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
 
+//This is all other pages H1
 h1 {
 	/* Main logo title */
 	@include fontSize(150);
 	font-family: 'Great Vibes', cursive;
 	color: #FFFFFF;
 	text-align: center;
+	margin: 0;
+	padding: 0;
 }
 
 h2 {
@@ -70,6 +85,8 @@ h3 {
 	color: #FFFFFF;
 	line-height: 85px;
 	text-align: center;
+	margin: 0;
+	padding: 0;
 
 }
 
@@ -147,6 +164,19 @@ Buttons
 
 .mainBtn {
 
+	/* Background: */
+	background: $orange;
+	border: 1px solid $orange;
+	border-radius: 40px;
+	/* WORK WITH US: */
+	@include fontSize(11);
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	color: #FFFFFF;
+	letter-spacing: 1.83px;
+	line-height: 13px;
+	text-transform: uppercase;
+	padding: 2em 7em;
 
 	:hover {
 
@@ -188,16 +218,40 @@ Header
 ====================================
 */
 
-.hero {
 
-	/* Location of the image */
-	background-image: url(../images/mainIllustration.svg);
+
+.serviceSection {
+	display: flex;
+}
+
+.services {
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+	li {
+		padding: 6% 1%;
+	}
+	img {
+		padding: 0 0 10% 0;
+	}
+	h2 {
+		padding: 0 0 5% 0;
+	}
+
+
+}
+
+.heroTop {
+
+	// /* Location of the image */
+	// background-image: url(../images/mainIllustration.svg);
 
 	/* Image is centered vertically and horizontally at all times */
 	background-position: center center;
 
 	/* Image doesn't repeat */
 	background-repeat: no-repeat;
+	height: 100vh;
 
 	/* Makes the image fixed in the viewport so that it doesn't move when 
 	 the content height is greater than the image height */
@@ -205,13 +259,59 @@ Header
 
 	/* This is what makes the background image rescale based on its container's size */
 	background-size: contain;
+	background-color: $seafoam;
+	padding-top: 3em;
 
-	// /* Pick a solid background color that will be displayed while the background image is loading */
-	// background-color:#464646;
-  
-	// SHORTHAND CSS NOTATION
-	// background: url(background-photo.jpg) center center cover no-repeat fixed;
+}
 
+.heroTitle {
+	position: absolute;
+	top: 5em;
+	width: 100%;
+	text-align: center;
+	color: white;
+
+}
+
+.hero {
+	position: relative;
+}
+
+//Top Bar
+.topNav {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 50px 10px 10px 10px;
+}
+.hamburger .fa {
+	color: white;
+	font-size: 24px;
+}
+.social {
+	color: white;
+	ul {
+		list-style-type: none;
+	}
+	li {
+		display: inline-block;
+	    padding: 0 30px 0 0;
+	    font-size: 20px;
+	    margin: 0;
+	    line-height: 0px;
+	}
+}
+
+
+
+//Hero Image
+.hero {
+	    text-align: center;
+
+}
+img.logo {
+	max-width: 100%;
 }
 
 
@@ -240,7 +340,7 @@ img {
 
 body {
 	color: white;
-	background: $seafoam;
+	// background: $seafoam;
 	font-family: 'Merriweather', serif;
 	padding: 0;
 	margin: 0;
@@ -254,6 +354,15 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
 }
 
 .content {
