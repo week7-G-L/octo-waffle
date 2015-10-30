@@ -255,7 +255,14 @@ body {
 	padding: 2rem;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.column{
 	flex-direction: column;
+}
+
+.row{
+	flex-direction: row;
 }
 
 .content {
@@ -280,6 +287,21 @@ article{
 
 section.body{
 	background: white;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10rem 5rem;
+}
+
+.descItem{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: calc(33.33% - 2rem);
+	justify-content: center;
+	align-items: center;
+	&:nth-child(2){
+		margin: 0 2rem;
+	}
 }
 
 section.feature{

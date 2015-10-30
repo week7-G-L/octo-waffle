@@ -6,7 +6,7 @@
 
 include('headerSplash.php');  ?>
 
-<header class="container">
+<header class="container column">
 <!-- 	<div class="main container">
 		<div class="hamburger"><i class="fa fa-bars"></i></div>
 		<div class="social">
@@ -34,22 +34,37 @@ include('headerSplash.php');  ?>
 </div> <!-- /.main -->
 
 <section class="body">
-	<ul>
-		<li>
-		<img src="<?php echo get_template_directory_uri(); ?>/images/Icon1.svg" alt="">
-			<h2>Natural Remedies</h2>
-			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
-		</li>
-		<li>
-			<img src="<?php echo get_template_directory_uri(); ?>/images/Icon2.svg" alt="">
-			<h2>Workout Routines</h2>
-			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
-		</li>
-		<li>
-			<img src="<?php echo get_template_directory_uri(); ?>/images/Icon3.svg" alt="">
-			<h2>Meal Plans</h2>
-			<p>Bespoke keffiyeh photo booth, asymmetrical pour-over lomo church-key hashtag gastropub heirloom retro pickled narwhal.</p>
-	</ul>
+	<div class="container row">
+			<?php 
+		
+				$descriptorQuery = new WP_Query(
+						array(
+								'posts_per_page' => 3,
+								'post_type' => 'descriptor',
+								'post_not_in' => array( $post->ID )
+							)
+					);
+		
+			 ?>
+		
+			 <?php 
+		
+			 	if ($descriptorQuery->have_posts()) : 
+		
+			  ?>
+		
+					<?php while ($descriptorQuery->have_posts()) : $descriptorQuery->the_post(); ?>
+				<div class="descItem">
+						<div class="descImg">
+							<img src="<?php the_field('desc-image') ?>" alt="">
+						</div>
+					<h2><?php the_field('desc-title') ?></h2>
+					<p><?php the_field('desc-summary') ?></p>
+				</div>
+					<?php endwhile; ?>
+		
+				<?php endif; ?></div>
+
 </section>
 
 <section class="feature">

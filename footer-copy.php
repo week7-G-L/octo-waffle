@@ -1,5 +1,5 @@
 <footer>
-  <div class="container">
+  <div class="container column">
     <p>&copy; Pure Life <?php echo date('Y'); ?></p>
   </div>
 </footer>

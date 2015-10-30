@@ -1,5 +1,5 @@
 <footer>
-  <div class="container">
+  <div class="container column">
     <?php 
 
 		$footerQuery = new WP_Query(
