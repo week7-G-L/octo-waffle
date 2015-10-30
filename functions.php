@@ -82,6 +82,13 @@ function hackeryou_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');
 
+function wpb_add_google_fonts() {
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Great+Vibes|Merriweather:400,700|Raleway:400,300,500,700', false );
+}
+
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+
 
 
 /* Custom Title Tags */

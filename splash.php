@@ -6,35 +6,35 @@
 
 include('headerSplash.php');  ?>
 
-<header class="container column">
-<!-- 	<div class="main container">
-		<div class="hamburger"><i class="fa fa-bars"></i></div>
-		<div class="social">
-			<ul>
-				<li><i class="fa fa-facebook"></i></li>
-				<li><i class="fa fa-twitter"></i></li>
-				<li><i class="fa fa-instagram"></i></li>
-			</ul>
+<!-- Header Section -->
+<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+
+		<div class="heroTop" style="background-image: url('<?php echo $image[0]; ?>')">
+			<div class="topNav wrapper">
+				<div class="hamburger"><a href="#"><i class="fa fa-bars"></i></a></div>
+				<div class="social">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="hero container">
+				<div class="heroTitle">
+					<h3><?php echo get_bloginfo( 'description' )?></h3>
+					<h1>PureLife</h1>
+					<button class="mainBtn">Work with us</button>
+				</div>
+			</div>
 		</div>
-	</div> -->
-	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
-
-	<div class="hero wrapper" style="background-image: url('<?php echo $image[0]; ?>')">
-		<h3><?php echo get_bloginfo( 'description' )?></h3>
-		
-		<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home"><?php echo get_bloginfo( )?></a></h1>
-
-		<button class="mainBtn">Work With Us </button>
-
-	</div>
-</header>
 
 
   </div> 
 </div> <!-- /.main -->
 
 <section class="body">
-	<div class="container row">
+	<div class="container row serviceSection">
 			<?php 
 		
 				$descriptorQuery = new WP_Query(
@@ -90,12 +90,13 @@ include('headerSplash.php');  ?>
 	 	if ($featureQuery->have_posts()) : 
 
 	  ?>
-
+			<article>
 			<?php while ($featureQuery->have_posts()) : $featureQuery->the_post(); ?>
 			<img src="<?php the_field('image') ?>" alt="">
 			<h2><?php the_title() ?></h2>
 			<p><?php the_field('description') ?></p>
 			<?php endwhile; ?>
+			</article>
 
 		<?php endif; ?>
 	
