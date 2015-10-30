@@ -1,3 +1,4 @@
 $(function(){
 	//your jQuery here
+
 });
