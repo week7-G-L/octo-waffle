@@ -53,6 +53,7 @@ include('headerSplash.php');  ?>
 
 <section class="feature">
 	<h4>Don't wait! Get started on your path to wellness today.</h4>
+	<h2>Featured Plans</h2>
 	
 	<!-- shows 3 featured plans -->
 
@@ -96,8 +97,10 @@ include('headerSplash.php');  ?>
 <?php
 	$args = array( 'numberposts' => '3' );
 	$recent_posts = wp_get_recent_posts( $args );
-	foreach( $recent_posts as $recent ){
-		echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+	foreach( $recent_posts as $recent ){ 
+		echo '<li>
+		<img src="' . get_the_post_thumbnail( $recent['ID']) . '">
+		<a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
 	}
 ?>
 </ul>
